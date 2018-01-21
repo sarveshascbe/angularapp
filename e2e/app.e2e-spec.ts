@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { element } from 'protractor';
 
 describe('my-app App', () => {
   let page: AppPage;

@@ -3,7 +3,7 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: './',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
@@ -11,6 +11,11 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
+    ],
+    files: [    
+      // simple pattern to load the needed testfiles
+      // equal to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}
+      'src/app/tests/*.spec.js',
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
